@@ -14,6 +14,7 @@ namespace WebApplication1.Controllers
         private readonly AuthService _authService;
         private readonly EFDbContext _context;
 
+        // Оставляем только один конструктор
         public HomeController(ILogger<HomeController> logger, AuthService authService, EFDbContext context)
         {
             _logger = logger;
@@ -65,16 +66,21 @@ namespace WebApplication1.Controllers
             catch (Exception ex)
             {
                 ViewBag.ErrorMessage = ex.Message;
-                return View("Index");
+                return View("Login");
             }
         }
 
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult Index()
         {
-            _logger = logger;
+            return View();
         }
 
-        public IActionResult Index()
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Register()
         {
             return View();
         }
@@ -84,7 +90,10 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-
+        public IActionResult Main()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,8 +1,393 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Книжная библиотека";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .library-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+            .logo:hover {
+                transform: scale(1.05);
+                text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            }
+
+        .login-btn {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .login-btn:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            }
+
+            .login-btn:active {
+                transform: translateY(1px) scale(0.98);
+            }
+
+            .login-btn::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .login-btn:hover::after {
+                opacity: 1;
+            }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+            animation: fadeInUp 1.2s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+            .hero-title:hover {
+                transform: scale(1.02);
+                text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+            }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeIn 1.5s ease 0.4s both;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            perspective: 1000px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            opacity: 0;
+            transform: translateY(20px) rotateY(15deg);
+            transform-style: preserve-3d;
+        }
+
+            .book-card.visible {
+                opacity: 1;
+                transform: translateY(0) rotateY(0);
+            }
+
+            .book-card:hover {
+                transform: translateY(-10px) rotateY(0) scale(1.03);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+                z-index: 10;
+            }
+
+        .book-cover {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+
+        .book-card:hover .book-cover {
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            padding: 20px;
+            background: white;
+            transform: translateZ(30px);
+        }
+
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .book-card:hover .book-title {
+            color: #2575fc;
+        }
+
+        .book-author {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .book-card:hover .book-author {
+            color: #6a11cb;
+        }
+
+        .book-rating {
+            color: #f39c12;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .book-card:hover .book-rating {
+            transform: scale(1.1);
+        }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+
+        }
+
+        @@keyframes fadeInUp {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        @@keyframes slideDown {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        @@keyframes float {
+            0%
+
+        {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="library-container">
+        <div class="header">
+            <div class="logo floating">BookVerse</div>
+            <button class="login-btn" id="loginButton">Войти в библиотеку</button>
+        </div>
+
+        <div class="hero-section">
+            <h1 class="hero-title">Откройте мир книг</h1>
+            <p class="hero-subtitle">Исследуйте нашу коллекцию из тысяч книг, от классики до современных бестселлеров.</p>
+        </div>
+
+        <div id="booksContainer"></div>
+    </div>
+
+    <!-- Встроенный React код -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Данные о книгах
+        const booksData = [
+            {
+                id: 1,
+                title: "Мастер и Маргарита",
+                author: "Михаил Булгаков",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327867965l/117833.jpg",
+                rating: 4.8
+            },
+            {
+                id: 2,
+                title: "1984",
+                author: "Джордж Оруэлл",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1532714506l/40961427._SX318_.jpg",
+                rating: 4.7
+            },
+            {
+                id: 3,
+                title: "Преступление и наказание",
+                author: "Фёдор Достоевский",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382846449l/2554.jpg",
+                rating: 4.6
+            },
+            {
+                id: 4,
+                title: "Маленький принц",
+                author: "Антуан де Сент-Экзюпери",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1367545443l/157993.jpg",
+                rating: 4.9
+            },
+            {
+                id: 5,
+                title: "Гарри Поттер и философский камень",
+                author: "Дж. К. Роулинг",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+                rating: 4.5
+            },
+            {
+                id: 6,
+                title: "Властелин колец",
+                author: "Дж. Р. Р. Толкин",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg",
+                rating: 4.7
+            }
+        ];
+
+        // Компонент карточки книги
+        function BookCard({ book }) {
+            return (
+                <div className="book-card">
+                    <div className="book-cover" style={{ backgroundImage: `url(${book.cover})` }}></div>
+                    <div className="book-info">
+                        <div className="book-title">{book.title}</div>
+                        <div className="book-author">{book.author}</div>
+                        <div className="book-rating">★ {book.rating}</div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Основной компонент
+        function BooksGrid() {
+            const [visibleBooks, setVisibleBooks] = React.useState([]);
+
+            React.useEffect(() => {
+                // Анимация появления карточек с задержкой
+                const timer = setTimeout(() => {
+                    setVisibleBooks(booksData);
+
+                    // Добавляем классы для анимации после рендера
+                    setTimeout(() => {
+                        const cards = document.querySelectorAll('.book-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add('visible');
+                            }, index * 150);
+                        });
+                    }, 50);
+                }, 500);
+
+                return () => clearTimeout(timer);
+            }, []);
+
+            return (
+                <div className="books-grid">
+                    {visibleBooks.map(book => (
+                        <BookCard key={book.id} book={book} />
+                    ))}
+                </div>
+            );
+        }
+
+        // Рендерим React компонент
+        ReactDOM.render(
+            <BooksGrid />,
+            document.getElementById('booksContainer')
+        );
+
+        // Обработчик кнопки входа с перенаправлением
+        document.getElementById('loginButton').addEventListener('click', function() {
+            // Анимация перед переходом
+            this.style.transform = 'scale(0.9)';
+            this.style.opacity = '0.8';
+
+            setTimeout(() => {
+                window.location.href = '/Home/Login';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

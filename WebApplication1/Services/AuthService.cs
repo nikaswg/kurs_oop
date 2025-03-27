@@ -100,8 +100,11 @@ namespace Services
             var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginDto.Username || u.UserName == loginDto.Username);
             if (user == null || !VerifyPassword(loginDto.Password, user.PasswordHash))
             {
+                Console.WriteLine("Не вошел");
                 throw new InvalidOperationException("Неверный логин или пароль.");
             }
+
+            Console.WriteLine("Вошел");
 
             return user; // Возвращаем пользователя при успешном входе
         }

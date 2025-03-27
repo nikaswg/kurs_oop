@@ -220,3 +220,6 @@ C:\Users\Никита\Downloads\kurs_oop\WebApplication1\obj\Debug\net9.0\refint
 C:\Users\Никита\Downloads\kurs_oop\WebApplication1\obj\Debug\net9.0\WebApplication1.pdb
 C:\Users\Никита\Downloads\kurs_oop\WebApplication1\obj\Debug\net9.0\WebApplication1.genruntimeconfig.cache
 C:\Users\Никита\Downloads\kurs_oop\WebApplication1\obj\Debug\net9.0\ref\WebApplication1.dll
+C:\Users\Никита\Downloads\kurs_oop\WebApplication1\bin\Debug\net9.0\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\Никита\Downloads\kurs_oop\WebApplication1\bin\Debug\net9.0\BCrypt.Net.dll
+C:\Users\Никита\Downloads\kurs_oop\WebApplication1\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
