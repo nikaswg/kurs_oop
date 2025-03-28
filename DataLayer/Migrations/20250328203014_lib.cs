@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DataLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class lib : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,12 +34,13 @@ namespace DataLayer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ISBN = table.Column<int>(type: "int", nullable: false),
-                    Book_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Book_Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Book_Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Book_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Book_Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Book_Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Publication_Date = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Number_Of_Pages = table.Column<int>(type: "int", nullable: false)
+                    Number_Of_Pages = table.Column<int>(type: "int", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,11 +53,11 @@ namespace DataLayer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Home_Adress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone_Number = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Home_Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone_Number = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -69,13 +70,13 @@ namespace DataLayer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role_Id = table.Column<int>(type: "int", nullable: false),
-                    Home_Adres = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone_Number = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Birthday_Date = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Salary = table.Column<int>(type: "int", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Role_Id = table.Column<int>(type: "int", nullable: true),
+                    Home_Adres = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone_Number = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Birthday_Date = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Salary = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

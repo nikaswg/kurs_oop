@@ -14,5 +14,6 @@ namespace DataLayer
         public DateTime? Issue_Date { get; set; }
         public DateTime? Return_Date { get; set; }
         public string Name_Reader { get; set; } = string.Empty;
+
     }
 }

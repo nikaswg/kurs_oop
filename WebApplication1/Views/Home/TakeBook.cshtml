@@ -1,0 +1,297 @@
+﻿@model DataLayer.RegisterModel
+@{
+    ViewData["Title"] = "Регистрация в библиотеке";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+            .register-container.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .register-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 10px;
+                background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .register-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .register-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .register-subtitle {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: #2c3e50;
+                transition: all 0.3s ease;
+                transform-origin: left center;
+            }
+
+        .form-control {
+            width: 88.5%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+            .form-control:focus {
+                border-color: #6a11cb;
+                box-shadow: 0 0 0 3px rgba(106,17,203,0.1);
+            }
+
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+            .register-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            }
+
+            .register-btn:active {
+                transform: translateY(1px);
+            }
+
+        .register-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+
+            .register-footer a {
+                color: #2575fc;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+
+                .register-footer a:hover {
+                    color: #6a11cb;
+                    text-decoration: underline;
+                }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .book-icon {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Анимации */
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @@keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @@keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="register-container" id="registerForm">
+        <i class="fas fa-book-open book-icon" style="top:20px; right:20px; font-size:5rem; color:#6a11cb; animation:float 6s ease-in-out infinite"></i>
+        <i class="fas fa-book book-icon" style="bottom:20px; left:20px; font-size:4rem; color:#2575fc; animation:float 5s ease-in-out infinite 1s"></i>
+
+        <div class="register-header">
+            <div class="register-logo floating">BookVerse</div>
+            <h1 class="register-title">Создайте аккаунт</h1>
+            <p class="register-subtitle">Присоединяйтесь к нашей библиотеке</p>
+        </div>
+
+        <form method="post" id="registerForm">
+            <div class="form-group">
+                <label asp-for="Username">Имя пользователя</label>
+                <input asp-for="Username" class="form-control" placeholder="Придумайте имя пользователя" />
+                <span asp-validation-for="Username" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Электронная почта</label>
+                <input asp-for="Email" class="form-control" placeholder="Введите ваш email" />
+                <span asp-validation-for="Email" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name">Ваше имя</label>
+                <input asp-for="Name" class="form-control" placeholder="Как вас зовут?" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password">Пароль</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Придумайте пароль" />
+                <span asp-validation-for="Password" class="error-message"></span>
+            </div>
+
+            <button type="submit" class="register-btn">Зарегистрироваться</button>
+
+            <div class="register-footer">
+                Уже есть аккаунт? <a href="/Login">Войдите</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Анимация появления формы
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerContainer = document.getElementById('registerForm');
+            setTimeout(() => {
+                registerContainer.classList.add('visible');
+            }, 100);
+
+            // Анимация для полей ввода
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    const label = this.parentElement.querySelector('label');
+                    if (label) {
+                        label.style.color = '#6a11cb';
+                        label.style.transform = 'translateY(-5px)';
+                    }
+                });
+
+                input.addEventListener('blur', function() {
+                    const label = this.parentElement.querySelector('label');
+                    if (label && !this.value) {
+                        label.style.color = '#2c3e50';
+                        label.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            // Обработка отправки формы
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.style.opacity = '0.8';
+                        submitBtn.style.transform = 'scale(0.98)';
+                        submitBtn.textContent = 'Регистрация...';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Подключение валидации на стороне клиента -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

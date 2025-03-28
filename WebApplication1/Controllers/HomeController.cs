@@ -95,6 +95,25 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public IActionResult Catalog()
+        {
+            var books = _context.Books.ToList();
+
+            // Преобразование List<Book> в List<BookModel>
+            var bookModels = books.Select(b => new BookModel
+            {
+                ISBN = b.ISBN, 
+                Book_Name = b.Book_Name,
+                Book_Author = b.Book_Author,
+                Book_Description = b.Book_Description,
+                Publication_Date = b.Publication_Date,
+                Number_Of_Pages = b.Number_Of_Pages,
+                Image = b.Image
+            }).ToList();
+
+            return View(bookModels);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

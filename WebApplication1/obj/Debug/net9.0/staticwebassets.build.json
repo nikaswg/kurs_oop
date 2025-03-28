@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LnuRhy/RJcqXvQBBbcSgoz1g4v1MNR71a8ckKp+qd8Q=",
+  "Hash": "TmKRjYPoHd84kfjTww6Pj+sK7B2bsimd/6C3MyVKF+U=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -1340,6 +1340,27 @@
       "OriginalItemSpec": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\books_img\\test.jpg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "books_img/test#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zeqokqhy4n",
+      "Integrity": "u2dbCGJLCv8Do0QogLGXQR7JfW6dg8mqQZDX0PaYv1g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\books_img\\test.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\css\\site.css",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
@@ -2601,6 +2622,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "books_img/test.jpg",
+      "AssetFile": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\books_img\\test.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u2dbCGJLCv8Do0QogLGXQR7JfW6dg8mqQZDX0PaYv1g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Mar 2025 23:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u2dbCGJLCv8Do0QogLGXQR7JfW6dg8mqQZDX0PaYv1g="
+        }
+      ]
+    },
+    {
+      "Route": "books_img/test.zeqokqhy4n.jpg",
+      "AssetFile": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\books_img\\test.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u2dbCGJLCv8Do0QogLGXQR7JfW6dg8mqQZDX0PaYv1g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Mar 2025 23:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zeqokqhy4n"
+        },
+        {
+          "Name": "label",
+          "Value": "books_img/test.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-u2dbCGJLCv8Do0QogLGXQR7JfW6dg8mqQZDX0PaYv1g="
+        }
+      ]
+    },
     {
       "Route": "css/site.c2tiyv64ts.css",
       "AssetFile": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\obj\\Debug\\net9.0\\compressed\\sfr9826l73-c2tiyv64ts.gz",

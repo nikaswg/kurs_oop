@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class Book
+    public class BookModel
     {
-        public int Id {  get; set; }
         public string ISBN { get; set; } = string.Empty;
         public string Book_Name { get; set; } = string.Empty;
         public string Book_Author { get; set; } = string.Empty;
