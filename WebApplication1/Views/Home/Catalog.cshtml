@@ -361,7 +361,7 @@
             {
                 @foreach (var book in Model)
                 {
-                    <div class="book-card">
+                    <div class="book-card" onclick="window.location.href='@Url.Action("BookDetail", "Home", new { ISBN = book.ISBN })'">
                         <div class="book-cover" style="background-image: url('@book.Image')">
                             @if (book.Publication_Date.HasValue && (DateTime.Now - book.Publication_Date.Value).TotalDays < 30)
                             {

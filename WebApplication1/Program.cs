@@ -16,6 +16,7 @@ builder.Services.AddDbContext<EFDbContext>(options =>
 
 // Регистрация сервиса AuthService
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<LibraryService>();
 
 // Добавление поддержки сессий
 builder.Services.AddSession(options =>

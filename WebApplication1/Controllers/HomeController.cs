@@ -1,4 +1,4 @@
-using DataLayer;
+п»їusing DataLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -12,13 +12,15 @@ namespace WebApplication1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly AuthService _authService;
+        private readonly LibraryService _libraryService;
         private readonly EFDbContext _context;
 
-        // Оставляем только один конструктор
-        public HomeController(ILogger<HomeController> logger, AuthService authService, EFDbContext context)
+        // РћСЃС‚Р°РІР»СЏРµРј С‚РѕР»СЊРєРѕ РѕРґРёРЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+        public HomeController(ILogger<HomeController> logger, AuthService authService, LibraryService libraryService, EFDbContext context)
         {
             _logger = logger;
             _authService = authService;
+            _libraryService = libraryService;
             _context = context;
         }
 
@@ -30,10 +32,10 @@ namespace WebApplication1.Controllers
                 return BadRequest("Invalid registration data.");
             }
 
-            // Регистрация пользователя
+            // Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
             var user = await _authService.RegisterAsync(model);
 
-            // Если регистрация успешна, редирект на страницу Index
+            // Р•СЃР»Рё СЂРµРіРёСЃС‚СЂР°С†РёСЏ СѓСЃРїРµС€РЅР°, СЂРµРґРёСЂРµРєС‚ РЅР° СЃС‚СЂР°РЅРёС†Сѓ Index
             if (user != null)
             {
                 return RedirectToAction("Index");
@@ -47,7 +49,7 @@ namespace WebApplication1.Controllers
         {
             if (string.IsNullOrEmpty(usernameOrEmail) || string.IsNullOrEmpty(password))
             {
-                ViewBag.ErrorMessage = "Логин или пароль не могут быть пустыми.";
+                ViewBag.ErrorMessage = "Р›РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ РЅРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹РјРё.";
                 return View("Index");
             }
 
@@ -56,7 +58,7 @@ namespace WebApplication1.Controllers
                 var user = await _authService.LoginAsync(new LoginModel { Username = usernameOrEmail, Password = password });
                 var token = _authService.GenerateJwtToken(user.Email, user.Id);
 
-                // Сохранение информации о пользователе в сессии
+                // РЎРѕС…СЂР°РЅРµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Рµ РІ СЃРµСЃСЃРёРё
                 HttpContext.Session.SetString("Username", user.UserName);
                 HttpContext.Session.SetString("Email", user.Email);
                 HttpContext.Session.SetString("Role", user.Role);
@@ -99,7 +101,7 @@ namespace WebApplication1.Controllers
         {
             var books = _context.Books.ToList();
 
-            // Преобразование List<Book> в List<BookModel>
+            // РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ List<Book> РІ List<BookModel>
             var bookModels = books.Select(b => new BookModel
             {
                 ISBN = b.ISBN, 
@@ -112,6 +114,32 @@ namespace WebApplication1.Controllers
             }).ToList();
 
             return View(bookModels);
+        }
+
+        [HttpGet("Home/Book/{ISBN}")]
+        public async Task<IActionResult> BookDetail(string ISBN)
+        {
+            var book = await _libraryService.GetBookByISBN(ISBN);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            var bookDetail = new BookModel
+            {
+                ISBN = book.ISBN,
+                Book_Name = book.Book_Name,
+                Book_Author = book.Book_Author,
+                Book_Description = book.Book_Description,
+                Publication_Date = book.Publication_Date,
+                Number_Of_Pages = book.Number_Of_Pages,
+                Image = book.Image
+            };
+
+
+
+            return View(bookDetail);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

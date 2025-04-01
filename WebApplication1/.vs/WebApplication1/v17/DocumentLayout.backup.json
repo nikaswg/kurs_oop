@@ -3,98 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/libDb/True/SqlTable/dbo.Books.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\bookdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\bookdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\catalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\catalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\bookmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\services\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:services\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\book_issuance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\main.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\main.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\efdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Migrations\\20250328203014_lib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\takebook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\takebook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\catalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\catalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/libDb/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\datalayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E94F4BA-22E7-4BC4-9CE1-6BAEBA99E9F7}|..\\DataLayer\\DataLayer.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\datalayer\\datalayer.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\webapplication1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:webapplication1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|c:\\users\\\u043D\u0438\u043A\u0438\u0442\u0430\\downloads\\kurs_oop\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B0FEFBB-E161-497D-B4C1-D7B4FACF9A8E}|WebApplication1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -104,335 +37,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.Books [\u0414\u0430\u043D\u043D\u044B\u0435]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/libDb/True/SqlTable/dbo.Books.sql",
-              "ToolTip": "dbo.Books [\u0414\u0430\u043D\u043D\u044B\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-03-28T20:31:31.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20250328203014_lib.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Migrations\\20250328203014_lib.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Migrations\\20250328203014_lib.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Migrations\\20250328203014_lib.cs",
-              "RelativeToolTip": "..\\DataLayer\\Migrations\\20250328203014_lib.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAgwFsAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T20:30:14.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BookModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\BookModel.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\BookModel.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\BookModel.cs",
-              "RelativeToolTip": "..\\DataLayer\\BookModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T20:11:09.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Catalog.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Catalog.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Catalog.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Catalog.cshtml",
-              "RelativeToolTip": "Views\\Home\\Catalog.cshtml",
-              "ViewState": "AgIAALcAAAAAAAAAAAAAAAAAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-28T20:09:00.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TakeBook.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\TakeBook.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\TakeBook.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\TakeBook.cshtml",
-              "RelativeToolTip": "Views\\Home\\TakeBook.cshtml",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAmwCgBAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-28T18:39:33.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Main.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Main.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Main.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Main.cshtml",
-              "RelativeToolTip": "Views\\Home\\Main.cshtml",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAiwO4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T23:10:47.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "dbo.Users.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/libDb/True/SqlTable/dbo.Users.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/libDb/True/SqlTable/dbo.Users.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-03-27T21:44:43.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Login.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Login.cshtml",
-              "RelativeToolTip": "Views\\Home\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T21:18:39.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAGMBAAAAAAAAAAAmwIgBAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T20:26:14.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T20:26:08.775Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAowGgAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T19:07:44.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\LoginModel.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\LoginModel.cs",
-              "RelativeToolTip": "..\\DataLayer\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T18:47:06.731Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "WebApplication1.csproj",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\WebApplication1.csproj",
-              "RelativeDocumentMoniker": "WebApplication1.csproj",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\WebApplication1.csproj",
-              "RelativeToolTip": "WebApplication1.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-13T17:17:13.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Services\\AuthService.cs",
-              "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAuwHAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T17:06:05.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "RegisterModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\RegisterModel.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\RegisterModel.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\RegisterModel.cs",
-              "RelativeToolTip": "..\\DataLayer\\RegisterModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:18.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Register.cshtml",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Register.cshtml",
-              "RelativeToolTip": "Views\\Home\\Register.cshtml",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAmwCgBAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T16:50:22.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "DataLayer",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\DataLayer.csproj",
-              "RelativeDocumentMoniker": "..\\DataLayer\\DataLayer.csproj",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\DataLayer.csproj",
-              "RelativeToolTip": "..\\DataLayer\\DataLayer.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-09T15:50:07.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "WebApplication1",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\WebApplication1.csproj",
-              "RelativeDocumentMoniker": "WebApplication1.csproj",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\WebApplication1.csproj",
-              "RelativeToolTip": "WebApplication1.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-09T15:32:09.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-09T12:50:33.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:50:05.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DataLayer.csproj",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\DataLayer.csproj",
-              "RelativeDocumentMoniker": "..\\DataLayer\\DataLayer.csproj",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\DataLayer.csproj",
-              "RelativeToolTip": "..\\DataLayer\\DataLayer.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-09T12:35:25.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Users.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Users.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Users.cs",
-              "RelativeToolTip": "..\\DataLayer\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:35:22.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Staff.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Staff.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Staff.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Staff.cs",
-              "RelativeToolTip": "..\\DataLayer\\Staff.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:35:21.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Reader.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Reader.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Reader.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Reader.cs",
-              "RelativeToolTip": "..\\DataLayer\\Reader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:35:21.34Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EFDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\EFDbContext.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\EFDbContext.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\EFDbContext.cs",
-              "RelativeToolTip": "..\\DataLayer\\EFDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:35:20.518Z",
+              "Title": "dbo.Users [\u0414\u0430\u043D\u043D\u044B\u0435]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/libDb/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [\u0414\u0430\u043D\u043D\u044B\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-01T21:15:24.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Book_Issuance.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Book_Issuance.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Book_Issuance.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Book_Issuance.cs",
-              "RelativeToolTip": "..\\DataLayer\\Book_Issuance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:35:19.952Z",
+              "WhenOpened": "2025-04-01T21:13:01.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Services\\LibraryService.cs",
+              "RelativeDocumentMoniker": "Services\\LibraryService.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Services\\LibraryService.cs",
+              "RelativeToolTip": "Services\\LibraryService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T18:40:39.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAYwHYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T18:34:47.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Book.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Book.cs",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\DataLayer\\Book.cs",
-              "RelativeToolTip": "..\\DataLayer\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:35:19.145Z",
+              "Title": "Catalog.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Catalog.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Catalog.cshtml",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Catalog.cshtml",
+              "RelativeToolTip": "Views\\Home\\Catalog.cshtml",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAwwGsBAACIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T18:30:32.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\BookDetail.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\BookDetail.cshtml",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\BookDetail.cshtml",
+              "RelativeToolTip": "Views\\Home\\BookDetail.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T18:28:19.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u0438\u0442\u0430\\Downloads\\kurs_oop\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAP4AAAAAAAAAAADwvxgBAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T18:06:12.51Z",
               "EditorCaption": ""
             }
           ]
