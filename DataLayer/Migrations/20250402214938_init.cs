@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DataLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class lib : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +17,7 @@ namespace DataLayer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ISBN = table.Column<int>(type: "int", nullable: true),
+                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Issue_Number = table.Column<int>(type: "int", nullable: true),
                     Issue_Date = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Return_Date = table.Column<DateTime>(type: "datetime2", nullable: true),

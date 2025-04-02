@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebApplication1.yj6fvmmoe8.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\books_img\\1.jpg",
+      "PackagePath": "staticwebassets\\books_img\\1.jpg"
+    },
+    {
       "Id": "C:\\Users\\Никита\\Downloads\\kurs_oop\\WebApplication1\\wwwroot\\books_img\\test.jpg",
       "PackagePath": "staticwebassets\\books_img\\test.jpg"
     },

@@ -57,6 +57,7 @@ C:\Users\Никита\Downloads\kurs_oop\WebApplication1\wwwroot\lib\jquery-vali
 C:\Users\Никита\Downloads\kurs_oop\WebApplication1\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
 C:\Users\Никита\Downloads\kurs_oop\WebApplication1\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
 C:\Users\Никита\Downloads\kurs_oop\WebApplication1\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\books_img\1.jpg
 wwwroot\books_img\test.jpg
 wwwroot\css\site.css
 wwwroot\favicon.ico

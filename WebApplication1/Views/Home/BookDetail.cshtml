@@ -457,7 +457,177 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .reservation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: slideDown 0.3s ease-out forwards;
+            border: 1px solid #e0e0e0;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .modal-body {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .modal-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn-confirm {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+
+        .modal-btn-cancel {
+            background: #f5f7fa;
+            color: #7f8c8d;
+            border: 1px solid #e0e0e0;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-btn:active {
+            transform: translateY(0);
+        }
+
+        .reservation-success {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .success-icon {
+            color: #2ecc71;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .reservation-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+            padding: 8px 15px;
+            background: #e8f4fd;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* Анимации для модального окна */
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @@keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Адаптивность */
+        @@media (max-width: 576px) {
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+            }
+
+            .modal-btn {
+                width: 100%;
+            }
+        }
+        /* Только новые стили для кнопок */
+        .btn-disabled {
+            background: #e0e0e0 !important;
+            color: #9e9e9e !important;
+            cursor: not-allowed !important;
+            pointer-events: none !important;
+            border: 1px solid #bdbdbd !important;
+        }
+
+        .btn-success {
+            background: var(--success-color) !important;
+            color: white !important;
+        }
+
+        .modal-timer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="book-detail-container">
@@ -490,7 +660,7 @@
                     <button class="action-btn btn-secondary">
                         <i class="fas fa-bookmark"></i> В избранное
                     </button>
-                    <button class="action-btn btn-secondary">
+                    <button class="action-btn btn-secondary" id="reserveBtn" data-isbn="@Model.ISBN">
                         <i class="fas fa-calendar-check"></i> Забронировать
                     </button>
                     <button class="action-btn btn-accent">
@@ -534,10 +704,362 @@
         </div>
     </div>
 
-    <!-- Подключаем Font Awesome для иконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Модальное окно бронирования -->
+    <div id="reservationModal" class="reservation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Бронирование книги</h3>
+            </div>
+            <div class="modal-body">
+                <p>Вы действительно хотите забронировать книгу <strong>"@Model.Book_Name"</strong>?</p>
+                <div id="reservationSuccess" class="reservation-success">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <p>Книга успешно забронирована!</p>
+                    <div class="reservation-number" id="reservationNumber"></div>
+                    <p>Номер брони можно использовать для получения книги в библиотеке.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelReserve" class="modal-btn modal-btn-cancel">Отмена</button>
+                <button id="confirmReserve" class="modal-btn modal-btn-confirm">Забронировать</button>
+            </div>
+        </div>
+    </div>
 
     <script>
+        const currentUsername = '@Context.Session.GetString("Username")';
+        const currentBookIsbn = '@Model.ISBN';
+        let modalCloseTimer = null;
+        let timeLeft = 10;
+
+        // Функция проверки статуса бронирования
+        async function checkBookReservationStatus() {
+            try {
+                const response = await fetch(`/Home/CheckBookReservation?isbn=${currentBookIsbn}`);
+                const result = await response.json();
+
+                const reserveBtn = document.getElementById('reserveBtn');
+                const bookMeta = document.querySelector('.book-meta');
+
+                // Удаляем предыдущий статус, если он есть
+                const existingStatus = document.querySelector('.reservation-status-item');
+                if (existingStatus) {
+                    existingStatus.remove();
+                }
+
+                // Удаляем кнопку отмены, если она есть
+                const existingCancelBtn = document.getElementById('cancelReservationBtn');
+                if (existingCancelBtn) {
+                    existingCancelBtn.remove();
+                }
+
+                if (result.isReserved) {
+                    // Проверяем, забронирована ли книга текущим пользователем
+                    const isBookReservedByCurrentUser = result.reservationInfo.userName === currentUsername;
+
+                    if (isBookReservedByCurrentUser) {
+                        // Для пользователя, который забронировал книгу
+                        reserveBtn.innerHTML = `<i class="fas fa-calendar-check"></i> Забронировано`;
+                        reserveBtn.classList.remove('btn-secondary', 'btn-disabled');
+                        reserveBtn.classList.add('btn-success');
+                        reserveBtn.disabled = true;
+
+                        // Добавляем кнопку отмены брони
+                        const cancelBtn = document.createElement('button');
+                        cancelBtn.id = 'cancelReservationBtn';
+                        cancelBtn.className = 'action-btn btn-accent';
+                        cancelBtn.innerHTML = `<i class="fas fa-times"></i> Отменить бронь`;
+                        cancelBtn.onclick = showCancelReservationModal;
+                        document.querySelector('.book-actions').appendChild(cancelBtn);
+
+                        // Добавляем информацию о бронировании с номером
+                        const reservationInfo = document.createElement('div');
+                        reservationInfo.className = 'meta-item reservation-status-item';
+
+                        // Получаем номер брони из результата
+                        const reservationNumber = result.reservationInfo.issueNumber ||
+                                               result.reservationInfo.reservationId ||
+                                               'номер не указан';
+
+                        reservationInfo.innerHTML = `
+                            <span class="meta-label">Статус:</span>
+                            Забронирована вами до ${new Date(result.reservationInfo.returnDate).toLocaleDateString('ru-RU')}
+                            <br><span class="meta-label">Номер брони:</span> ${reservationNumber}
+                        `;
+                        bookMeta.appendChild(reservationInfo);
+                    } else {
+                        // Для других пользователей
+                        reserveBtn.innerHTML = `<i class="fas fa-calendar-check"></i> Уже забронирована`;
+                        reserveBtn.classList.remove('btn-secondary');
+                        reserveBtn.classList.add('btn-disabled');
+                        reserveBtn.disabled = true;
+
+                        // Добавляем информацию о бронировании без номера
+                        const reservationInfo = document.createElement('div');
+                        reservationInfo.className = 'meta-item reservation-status-item';
+                        reservationInfo.innerHTML = `
+                            <span class="meta-label">Статус:</span>
+                            Забронирована до ${new Date(result.reservationInfo.returnDate).toLocaleDateString('ru-RU')}
+                        `;
+                        bookMeta.appendChild(reservationInfo);
+                    }
+                } else {
+                    // Книга не забронирована - стандартное поведение
+                    reserveBtn.innerHTML = `<i class="fas fa-calendar-check"></i> Забронировать`;
+                    reserveBtn.classList.remove('btn-disabled', 'btn-success', 'btn-accent');
+                    reserveBtn.classList.add('btn-secondary');
+                    reserveBtn.disabled = false;
+                    reserveBtn.onclick = showReservationModal;
+                }
+            } catch (error) {
+                console.error('Ошибка при проверке статуса бронирования:', error);
+            }
+        }
+
+        // Функция для запуска таймера закрытия модального окна
+        function startModalCloseTimer(modal, callback) {
+            // Сбрасываем предыдущий таймер, если он есть
+            if (modalCloseTimer) {
+                clearInterval(modalCloseTimer);
+            }
+
+            timeLeft = 10;
+            updateTimerDisplay(modal);
+
+            modalCloseTimer = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay(modal);
+
+                if (timeLeft <= 0) {
+                    clearInterval(modalCloseTimer);
+                    modal.style.display = 'none';
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                    location.reload();
+                }
+            }, 1000);
+        }
+
+        // Функция для обновления отображения таймера
+        function updateTimerDisplay(modal) {
+            const timerElement = modal.querySelector('.modal-timer');
+            if (timerElement) {
+                timerElement.textContent = `Закроется через ${timeLeft} сек...`;
+            }
+        }
+
+        // Показать модальное окно бронирования
+        function showReservationModal() {
+            const modal = document.getElementById('reservationModal');
+            const successDiv = document.getElementById('reservationSuccess');
+            const confirmBtn = document.getElementById('confirmReserve');
+
+            successDiv.style.display = 'none';
+            modal.style.display = 'block';
+
+            // Восстанавливаем кнопку подтверждения
+            confirmBtn.style.display = 'block';
+            confirmBtn.disabled = false;
+            confirmBtn.innerHTML = 'Забронировать';
+            confirmBtn.onclick = confirmReservation;
+
+            // Восстанавливаем кнопку отмены
+            const cancelBtn = document.getElementById('cancelReserve');
+            cancelBtn.textContent = 'Отмена';
+            cancelBtn.onclick = () => {
+                modal.style.display = 'none';
+                if (modalCloseTimer) clearInterval(modalCloseTimer);
+                location.reload();
+            };
+
+            // Добавляем таймер в модальное окно
+            const timerElement = document.createElement('div');
+            timerElement.className = 'modal-timer';
+            timerElement.style.textAlign = 'center';
+            timerElement.style.marginTop = '10px';
+            timerElement.style.fontSize = '0.9em';
+            timerElement.style.color = '#666';
+
+            const modalFooter = modal.querySelector('.modal-footer');
+            if (!modal.querySelector('.modal-timer')) {
+                modalFooter.insertBefore(timerElement, modalFooter.firstChild);
+            }
+
+            startModalCloseTimer(modal);
+        }
+
+        // Показать модальное окно отмены бронирования
+        function showCancelReservationModal() {
+            const modal = document.getElementById('reservationModal');
+            const modalTitle = document.querySelector('.modal-title');
+            const modalBody = document.querySelector('.modal-body');
+            const confirmBtn = document.getElementById('confirmReserve');
+            const cancelBtn = document.getElementById('cancelReserve');
+
+            // Настраиваем модальное окно для отмены брони
+            modalTitle.textContent = 'Отмена бронирования книги';
+            modalBody.innerHTML = `
+                <p>Вы действительно хотите отменить бронирование книги <strong>"@Model.Book_Name"</strong>?</p>
+                <div id="cancelReservationSuccess" class="reservation-success">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <p>Бронирование успешно отменено!</p>
+                </div>
+            `;
+
+            document.getElementById('cancelReservationSuccess').style.display = 'none';
+            modal.style.display = 'block';
+
+            // Настраиваем кнопки
+            confirmBtn.style.display = 'block';
+            confirmBtn.innerHTML = '<i class="fas fa-times"></i> Отменить бронь';
+            confirmBtn.onclick = confirmCancelReservation;
+            cancelBtn.textContent = 'Не отменять';
+            cancelBtn.onclick = () => {
+                modal.style.display = 'none';
+                if (modalCloseTimer) clearInterval(modalCloseTimer);
+                location.reload();
+                restoreOriginalModalContent();
+            };
+
+            // Добавляем таймер в модальное окно
+            const timerElement = document.createElement('div');
+            timerElement.className = 'modal-timer';
+            timerElement.style.textAlign = 'center';
+            timerElement.style.marginTop = '10px';
+            timerElement.style.fontSize = '0.9em';
+            timerElement.style.color = '#666';
+
+            const modalFooter = modal.querySelector('.modal-footer');
+            if (!modal.querySelector('.modal-timer')) {
+                modalFooter.insertBefore(timerElement, modalFooter.firstChild);
+            }
+
+            startModalCloseTimer(modal, () => {
+                location.reload();
+            });
+
+            // Сохраняем оригинальное содержимое для восстановления
+            modal.dataset.originalTitle = modalTitle.textContent;
+            modal.dataset.originalBody = modalBody.innerHTML;
+        }
+
+        // Восстановление оригинального содержимого модального окна
+        function restoreOriginalModalContent() {
+            const modal = document.getElementById('reservationModal');
+            if (modal.dataset.originalTitle && modal.dataset.originalBody) {
+                document.querySelector('.modal-title').textContent = modal.dataset.originalTitle;
+                document.querySelector('.modal-body').innerHTML = modal.dataset.originalBody;
+            }
+        }
+
+        // Подтверждение бронирования
+        async function confirmReservation() {
+            const modal = document.getElementById('reservationModal');
+            const confirmBtn = document.getElementById('confirmReserve');
+            const successDiv = document.getElementById('reservationSuccess');
+            const reservationNumber = document.getElementById('reservationNumber');
+
+            confirmBtn.disabled = true;
+            confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Обработка...';
+
+            try {
+                const response = await fetch('/Home/ReserveBook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        isbn: currentBookIsbn,
+                        userName: currentUsername
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    successDiv.style.display = 'block';
+                    reservationNumber.textContent = `Номер брони: ${result.issueNumber || result.reservationId || 'номер не указан'}`;
+                    confirmBtn.style.display = 'none';
+
+                    const cancelBtn = document.getElementById('cancelReserve');
+                    cancelBtn.textContent = 'Закрыть';
+                    cancelBtn.onclick = () => {
+                        modal.style.display = 'none';
+                        if (modalCloseTimer) clearInterval(modalCloseTimer);
+                        location.reload();
+                    };
+
+                    // Перезапускаем таймер закрытия
+                    startModalCloseTimer(modal, () => {
+                        location.reload();
+                    });
+                } else {
+                    confirmBtn.disabled = false;
+                    confirmBtn.innerHTML = 'Забронировать';
+                    alert(result.message);
+                }
+            } catch (error) {
+                confirmBtn.disabled = false;
+                confirmBtn.innerHTML = 'Забронировать';
+                alert('Произошла ошибка при бронировании');
+                console.error(error);
+            }
+        }
+
+        // Подтверждение отмены бронирования
+        async function confirmCancelReservation() {
+            const modal = document.getElementById('reservationModal');
+            const confirmBtn = document.getElementById('confirmReserve');
+            const cancelSuccessDiv = document.getElementById('cancelReservationSuccess');
+
+            confirmBtn.disabled = true;
+            confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Обработка...';
+
+            try {
+                const response = await fetch('/Home/CancelReservation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        ISBN: currentBookIsbn,
+                        UserName: currentUsername
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    cancelSuccessDiv.style.display = 'block';
+                    confirmBtn.style.display = 'none';
+
+                    const cancelBtn = document.getElementById('cancelReserve');
+                    cancelBtn.textContent = 'Закрыть';
+                    cancelBtn.onclick = async () => {
+                        modal.style.display = 'none';
+                        if (modalCloseTimer) clearInterval(modalCloseTimer);
+                        location.reload();
+                    };
+
+                    // Перезапускаем таймер закрытия
+                    startModalCloseTimer(modal, async () => {
+                        modal.style.display = 'none';
+                        location.reload();
+                    });
+                } else {
+                    confirmBtn.disabled = false;
+                    confirmBtn.innerHTML = '<i class="fas fa-times"></i> Отменить бронь';
+                    alert(result.message);
+                }
+            } catch (error) {
+                confirmBtn.disabled = false;
+                confirmBtn.innerHTML = '<i class="fas fa-times"></i> Отменить бронь';
+                alert('Произошла ошибка при отмене бронирования');
+                console.error(error);
+            }
+        }
+
         // Обработчик кнопки "Краткое описание"
         document.getElementById('toggleDescription').addEventListener('click', function() {
             const descText = document.getElementById('descriptionText');
@@ -552,19 +1074,33 @@
             }
         });
 
-        // Обработчики для кнопок действий
-        document.querySelectorAll('.action-btn').forEach(btn => {
+        // Обработчики для кнопок действий (кроме бронирования)
+        document.querySelectorAll('.action-btn:not(#reserveBtn):not(#cancelReservationBtn)').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Анимация нажатия
                 this.style.transform = 'translateY(1px)';
                 setTimeout(() => {
                     this.style.transform = 'translateY(-3px)';
                 }, 100);
 
-                // Здесь можно добавить логику для каждой кнопки
                 const btnText = this.textContent.trim();
                 alert(`Вы выбрали: ${btnText}`);
             });
+        });
+
+        // Обработчик закрытия модального окна по клику вне его
+        document.getElementById('reservationModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                e.currentTarget.style.display = 'none';
+                if (modalCloseTimer) clearInterval(modalCloseTimer);
+                location.reload();
+                restoreOriginalModalContent();
+            }
+        });
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            checkBookReservationStatus();
+            document.getElementById('reserveBtn').onclick = showReservationModal;
         });
     </script>
 </body>

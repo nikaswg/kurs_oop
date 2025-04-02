@@ -125,7 +125,6 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
-
             var bookDetail = new BookModel
             {
                 ISBN = book.ISBN,
@@ -146,6 +145,85 @@ namespace WebApplication1.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ReserveBook([FromBody] BookIssuanceModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return Json(new { success = false, message = "Неверные данные" });
+                }
+
+                var result = await _libraryService.BookReservationForDay(model);
+
+                return Json(new
+                {
+                    success = true,
+                    message = $"Книга успешно забронирована! Номер брони: {result.Issue_Number}",
+                    issueNumber = result.Issue_Number
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        // Метод для проверки бронирования
+        public async Task<IActionResult> CheckBookReservation(string isbn)
+        {
+            try
+            {
+                var reservation = await _context.Book_Issuances
+                    .Where(b => b.ISBN == isbn && b.Return_Date > DateTime.Now)
+                    .OrderByDescending(b => b.Issue_Date)
+                    .FirstOrDefaultAsync();
+
+                return Json(new
+                {
+                    isReserved = reservation != null,
+                    reservationInfo = reservation != null ? new
+                    {
+                        returnDate = reservation.Return_Date,
+                        userName = reservation.Name_Reader,
+                        issueNumber = reservation.Issue_Number
+                    } : null
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { isReserved = false });
+            }
+        }
+
+        // Метод для отмены бронирования
+        [HttpPost]
+        public async Task<IActionResult> CancelReservation([FromBody] BookIssuanceModel model)
+        {
+            try
+            {
+                var reservation = await _context.Book_Issuances
+                    .FirstOrDefaultAsync(b => b.ISBN == model.ISBN &&
+                                           b.Name_Reader == model.UserName &&
+                                           b.Return_Date > DateTime.Now);
+
+                if (reservation == null)
+                {
+                    return Json(new { success = false, message = "Бронирование не найдено или уже отменено" });
+                }
+
+                _context.Book_Issuances.Remove(reservation);
+                await _context.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
         }
     }
 }
