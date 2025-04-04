@@ -19,7 +19,16 @@ namespace DataLayer
         public DbSet<Book> Books { get; set; }
         public DbSet<Book_Issuance> Book_Issuances { get; set; }
         public DbSet<Reader> Readers { get; set; }
-        public DbSet<Staff> Staff {  get; set; }    
+        public DbSet<Staff> Staff {  get; set; }
+        public DbSet<FavoriteBook> FavoriteBooks { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Настройка отношений, если нужно
+            modelBuilder.Entity<FavoriteBook>()
+                .HasIndex(f => new { f.UserName, f.ISBN })
+                .IsUnique();
+        }
     }
 
     public class EFDbContextFactory : IDesignTimeDbContextFactory<EFDbContext>

@@ -225,5 +225,83 @@ namespace WebApplication1.Controllers
                 return Json(new { success = false, message = ex.Message });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> CheckFavoriteStatus(string isbn, string username)
+        {
+            try
+            {
+                var isFavorite = await _context.FavoriteBooks
+                    .AnyAsync(f => f.ISBN == isbn && f.UserName == username);
+
+                return Json(new { isFavorite });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { error = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToFavorites([FromBody] FavoriteRequest request)
+        {
+            try
+            {
+                // Проверяем, не добавлена ли уже книга
+                var exists = await _context.FavoriteBooks
+                    .AnyAsync(f => f.ISBN == request.isbn && f.UserName == request.userName);
+
+                if (exists)
+                {
+                    return Json(new { success = false, message = "Книга уже в избранном" });
+                }
+
+                // Добавляем книгу в избранное
+                var favorite = new FavoriteBook
+                {
+                    UserName = request.userName,
+                    ISBN = request.isbn,
+                    AddedDate = DateTime.Now
+                };
+
+                _context.FavoriteBooks.Add(favorite);
+                await _context.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromFavorites([FromBody] FavoriteRequest request)
+        {
+            try
+            {
+                var favorite = await _context.FavoriteBooks
+                    .FirstOrDefaultAsync(f => f.ISBN == request.isbn && f.UserName == request.userName);
+
+                if (favorite != null)
+                {
+                    _context.FavoriteBooks.Remove(favorite);
+                    await _context.SaveChangesAsync();
+                }
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        // Вспомогательный класс для запроса
+        public class FavoriteRequest
+        {
+            public string isbn { get; set; }
+            public string userName { get; set; }
+        }
     }
 }

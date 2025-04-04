@@ -14,5 +14,7 @@ namespace DataLayer
         public string Role { get; set; } = "Reader"; 
         public string UserName { get; set; } = string.Empty;    
         public string Name { get; set; } = string.Empty;
+
+        public virtual ICollection<FavoriteBook> FavoriteBooks { get; set; } = new List<FavoriteBook>();
     }
 }
