@@ -1,4 +1,4 @@
-﻿@model List<DataLayer.BookModel>
+﻿@model List<WebApplication1.Models.BookModel>
 @{
     ViewData["Title"] = "Каталог книг";
 }
@@ -332,7 +332,7 @@
         </a>
 
         <div class="nav-links">
-            <a href="#"><i class="fas fa-home"></i> Главная</a>
+            <a href="@Url.Action("Main", "Home")"><i class="fas fa-home"></i> Главная</a>
             <a href="#" class="active"><i class="fas fa-book"></i> Каталог</a>
             <a href="#"><i class="fas fa-heart"></i> Избранное</a>
         </div>
@@ -414,7 +414,7 @@
     <script>
         // Конфигурация пагинации
         const config = {
-            itemsPerPage: 6, // Количество книг на странице
+            itemsPerPage: 8, // Количество книг на странице
             currentPage: 1   // Текущая страница
         };
 

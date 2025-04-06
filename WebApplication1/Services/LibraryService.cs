@@ -29,6 +29,42 @@ namespace Services
             return await _context.Books.FirstOrDefaultAsync(b => b.ISBN == ISBN);
         }
 
+        public BookModel GetBookByIsbn(string isbn)
+        {
+            var book = _context.Books
+                .Include(b => b.Genres)
+                .FirstOrDefault(b => b.ISBN == isbn);
+
+            if (book == null) return null;
+
+            return new BookModel
+            {
+                ISBN = book.ISBN ?? string.Empty,
+                Book_Name = book.Book_Name ?? string.Empty,
+                Book_Author = book.Book_Author ?? string.Empty,
+                Book_Description = book.Book_Description ?? string.Empty,
+                Publication_Date = book.Publication_Date,
+                Number_Of_Pages = book.Number_Of_Pages,
+                Image = book.Image ?? "/images/default-cover.jpg",
+                Genres = book.Genres ?? new List<string>()
+            };
+        }
+
+        public List<BookModel> GetAllBooks()
+        {
+            return _context.Books.Select(b => new BookModel
+            {
+                ISBN = b.ISBN ?? string.Empty,
+                Book_Name = b.Book_Name ?? string.Empty,
+                Book_Author = b.Book_Author ?? string.Empty,
+                Book_Description = b.Book_Description ?? string.Empty,
+                Publication_Date = b.Publication_Date,
+                Number_Of_Pages = b.Number_Of_Pages,
+                Image = b.Image ?? string.Empty,
+                Genres = b.Genres ?? new List<string>() // Инициализация пустым списком если null
+            }).ToList();
+        }
+
         public async Task<Book_Issuance> BookReservationForDay(BookIssuanceModel book)
         {
             Console.WriteLine("Метод вызван");

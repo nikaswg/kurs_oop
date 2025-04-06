@@ -133,11 +133,10 @@ namespace WebApplication1.Controllers
                 Book_Description = book.Book_Description,
                 Publication_Date = book.Publication_Date,
                 Number_Of_Pages = book.Number_Of_Pages,
-                Image = book.Image
+                Image = book.Image,
+                Genres = book.Genres
             };
-
-
-
+            _context.SaveChanges();
             return View(bookDetail);
         }
 
@@ -302,6 +301,46 @@ namespace WebApplication1.Controllers
         {
             public string isbn { get; set; }
             public string userName { get; set; }
+        }
+
+        [HttpGet]
+        public IActionResult GetSimilarBooks(string isbn)
+        {
+            try
+            {
+                // 1. Получаем текущую книгу
+                var currentBook = _context.Books
+                    .FirstOrDefault(b => b.ISBN == isbn);
+
+                if (currentBook == null || currentBook.Genres == null || !currentBook.Genres.Any())
+                    return Json(new List<Book>()); // Возвращаем пустой список если книга не найдена или нет жанров
+
+                // 2. Получаем все книги (кроме текущей)
+                var allBooks = _context.Books
+                    .Where(b => b.ISBN != isbn && b.Genres != null && b.Genres.Any())
+                    .ToList();
+
+                // 3. Ищем похожие книги
+                var similarBooks = allBooks
+                    .Select(b => new
+                    {
+                        Book = b,
+                        MatchScore = b.Genres.Intersect(currentBook.Genres).Count() // Считаем совпадения жанров
+                    })
+                    .Where(x => x.MatchScore > 0) // Только книги с совпадениями
+                    .OrderByDescending(x => x.MatchScore) // Сортируем по количеству совпадений
+                    .ThenBy(x => Guid.NewGuid()) // Для случайного порядка при одинаковом количестве совпадений
+                    .Take(5) // Берем топ-5
+                    .Select(x => x.Book) // Выбираем сами книги
+                    .ToList();
+
+                return Json(similarBooks);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при поиске похожих книг");
+                return Json(new List<Book>()); // Возвращаем пустой список в случае ошибки
+            }
         }
     }
 }

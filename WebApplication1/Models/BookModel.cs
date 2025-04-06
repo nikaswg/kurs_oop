@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer
+namespace WebApplication1.Models
 {
     public class BookModel
     {
@@ -15,6 +15,6 @@ namespace DataLayer
         public DateTime? Publication_Date { get; set; }
         public int Number_Of_Pages { get; set; }
         public string Image { get; set; } = string.Empty;
-
+        public List<string> Genres { get; set; }
     }
 }

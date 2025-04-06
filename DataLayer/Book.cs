@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class Book
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
         public string ISBN { get; set; } = string.Empty;
         public string Book_Name { get; set; } = string.Empty;
         public string Book_Author { get; set; } = string.Empty;
@@ -16,6 +16,6 @@ namespace DataLayer
         public DateTime? Publication_Date { get; set; }
         public int Number_Of_Pages { get; set; }
         public string Image { get; set; } = string.Empty;
-
+        public List<string> Genres { get; set; }
     }
 }
